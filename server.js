@@ -11,6 +11,7 @@ const cors = require("cors")
 const morgan = require("morgan")
 const MainCtrl = require("./controllers/MainCtrl.js")
 const APICtrl = require("./controllers/APICtrl.js")
+const cowsay = require("cowsay")
 
 // ================================
 // Global Variables & Class Based Controller Instantiation
@@ -57,4 +58,8 @@ ApiRoutes.get("/", apiCtrl.example)
 // ================================
 // Server Listener
 // ================================
-app.listen(PORT, () => console.log(`listening in to PORT:${PORT}`))
+app.listen(PORT, () => console.log(cowsay.say({
+    text: `grazing on PORT:${PORT}`,
+    e: "WA",
+    t: 'u'
+})))
